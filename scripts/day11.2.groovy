@@ -28,10 +28,8 @@ def processChanges(data){
 }
 
 def getSurroundingSeats(rowIndex, itemIndex, data){
-    def surroundingRows = Math.max(0, rowIndex-1)..Math.min(data.size()-1, rowIndex+1)
-    def surroundingColumns = Math.max(0, itemIndex-1)..Math.min(data[rowIndex].size()-1, itemIndex+1)
-    return surroundingRows.collect{sr ->
-        return surroundingColumns.collect{sc ->
+    return (Math.max(0, rowIndex-1)..Math.min(data.size()-1, rowIndex+1)).collect{sr ->
+        return (Math.max(0, itemIndex-1)..Math.min(data[rowIndex].size()-1, itemIndex+1)).collect{sc ->
             if(sr==rowIndex && sc==itemIndex) {
                 return "X"
             } else if(data[sr][sc] == "."){
