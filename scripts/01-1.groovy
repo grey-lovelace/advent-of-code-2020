@@ -5,7 +5,6 @@ fileArray.eachWithIndex { it, i ->
         if (i2 > i) {
             int currentInt2 = it2 as Integer
             if (currentInt + currentInt2 == 2020) {
-                println "Matching nums are:\n${i} - ${it}\n${i2} - ${it2}"
                 int answer = currentInt * currentInt2
                 println "Answer is: ${answer}"
             }

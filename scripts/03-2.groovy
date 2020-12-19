@@ -15,14 +15,12 @@ trips.each {
     fileArray.eachWithIndex { line, i ->
         if (i % down == 0) {
             if (line.chars[currentOverIndex] == '#') {
-                //println "hit tree on line ${i} overIndex ${currentOverIndex}\n${line}"
                 found++
             }
             currentOverIndex += over
             if (currentOverIndex >= line.size()) currentOverIndex -= line.size()
         }
     }
-    println "Trip over, hit: ${found}"
     answer = answer * found
 }
 println "Answer is: ${answer}"

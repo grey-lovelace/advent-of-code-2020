@@ -8,7 +8,6 @@ fileArray.eachWithIndex { it, i ->
                 if (i3 != i && i3 != i2) {
                     int currentInt3 = it3 as Integer
                     if (currentInt + currentInt2 + currentInt3 == 2020) {
-                        println "Matching nums are:\n${i} - ${it}\n${i2} - ${it2}\n${i3} - ${it3}"
                         int answer = currentInt * currentInt2 * currentInt3
                         println "Answer is: ${answer}"
                         System.exit(0)

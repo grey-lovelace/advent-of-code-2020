@@ -4,7 +4,6 @@ int currentOverIndex = 0
 int found = 0
 fileArray.eachWithIndex { it, i ->
     if (it.chars[currentOverIndex] == '#') {
-        println "hit tree on line ${i} overIndex ${currentOverIndex}\n${it}"
         found++
     }
     currentOverIndex += over
