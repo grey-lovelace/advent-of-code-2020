@@ -5,7 +5,6 @@ def rules = data[0..(data.indexOf("")-1)]
         it.substring(it.indexOf(":")+2,it.size()).split(" ")]
     }
 def regex = /^${buildRegex("0",rules)}$/
-println regex
 println "Answer is ${data[(data.indexOf("")+1)..-1].count{it.matches(regex)}}"
 
 def buildRegex(ruleNum, rules){
