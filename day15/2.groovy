@@ -1,15 +1,15 @@
 def data = new File('./input.txt').text.split(",").collect{it as Integer}
-def cache = [:]
+def cache = [int:int]
 data.eachWithIndex{it, i -> cache[it] = i}
 def currentNum = 0
 def lastNum = data.last()
 cache.remove(lastNum)
-(data.size()..29999999).each{
-    currentNum = cache.containsKey(lastNum) ? it-cache[lastNum]-1 : 0
-    println "$it - $currentNum"
-    cache[lastNum] = it-1
+int index = data.size()
+while (index < 30000000) {
+    // Dont print anything in here unless you want this to take over an hour
+    currentNum = cache.containsKey(lastNum) ? index-cache[lastNum]-1 : 0
+    cache[lastNum] = index-1
     lastNum = currentNum
+    index++
 }
 println "Answer is ${currentNum}"
-
-// Works, but still not performant. Should take about 2 hours to run.
