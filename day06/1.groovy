@@ -1,5 +1,5 @@
 def fileString = new File('./input.txt').text
-def pattern = /(?s).+?\r\n\r\n/
+def pattern = /(?s).+?(\r?\n\r?\n/
 def answers = (fileString =~ pattern).findAll()
     .collect { group ->
         return group.chars

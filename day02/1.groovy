@@ -10,7 +10,6 @@ fileArray.each {
     def password = matcher.group(4)
     int count = password.chars().filter(ch -> ch == matchLetter).count()
     if (lowInt <= count && count <= highInt) {
-        println it
         found++
     }
 }
